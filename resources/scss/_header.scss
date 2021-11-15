@@ -1,0 +1,31 @@
+/* ============================================================================
+   #HEADER
+   ========================================================================= */
+
+/**
+ * Styles for header section.
+ */
+
+
+/**
+ * Header
+ */
+
+.header {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+
+/**
+ * Header logo
+ */
+
+.header__logo {
+  display: block;
+  height: 1.5rem;
+
+  img {
+    height: 100%;
+  }
+}

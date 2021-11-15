@@ -1,0 +1,112 @@
+/* ============================================================================
+   #BUTTON
+   ========================================================================= */
+
+/**
+ * Styles for button component.
+ */
+
+
+/**
+ * Button
+ *
+ * 1. Animate the scale of the circle background.
+ */
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing;
+  line-height: 1rem;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 300ms ease-in-out;
+  z-index: 1;
+
+  &:hover {
+    &::before {
+      transform: scale(1) translate(-50%, -50%); // [1]
+    }
+  }
+
+  &::before {
+    border-radius: 50%;
+    content: "";
+    height: 500px;
+    transform: scale(0) translate(-50%, -50%);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    transition: transform 300ms ease-in-out;
+    z-index: -1;
+  }
+
+  &::after {
+    border-radius: 10px;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+  }
+
+  @include mq(md) {
+    font-size: $font-size-md;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    line-height: 1.5rem;
+  }
+}
+
+
+/**
+ * Secondary button
+ *
+ * Modifer to create a secondary button.
+ */
+
+.btn--secondary {
+  color: $color-white;
+
+  &::before {
+    background-color: $color-white;
+  }
+
+  &::after {
+    background-color: $color-secondary;
+  }
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+
+/**
+ * White button
+ *
+ * Modifer to create a white button.
+ */
+
+.btn--white {
+  color: $color-secondary;
+
+  &::before {
+    background-color: $color-primary;
+  }
+
+  &::after {
+    background-color: $color-white;
+  }
+
+  &:hover {
+    color: $color-white;
+  }
+}

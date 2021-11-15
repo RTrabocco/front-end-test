@@ -1,0 +1,24 @@
+/* ============================================================================
+   #CONTAINER
+   ========================================================================= */
+
+/**
+ * Styles for container component.
+ */ 
+
+
+/**
+ * Wide container
+ *
+ * Modifier to increase the maximum width of a container.
+ */
+
+.container--wide {
+  @include mq(xl) {
+    max-width: map-get($container-max-widths, xl);
+  }
+
+  @include mq(xxl) {
+    max-width: map-get($container-max-widths, xxl);
+  }
+}

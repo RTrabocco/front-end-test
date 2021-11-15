@@ -1,0 +1,62 @@
+///* ==========================================================================
+//   #VARIABLES
+//   ======================================================================= */
+
+
+//
+// Breakpoints
+//
+
+$grid-float-breakpoint: 992px;
+$grid-gutter-width: 30px;
+$grid-breakpoints: (
+	xs:  0,
+	sm:  576px,
+  ms:  650px,
+	md:  768px,
+	lg:  992px,
+	xl:  1200px,
+	xxl: 1600px
+);
+
+$container-max-widths: (
+    sm:  540px,
+    md:  720px,
+    lg:  960px,
+    xl:  1200px,
+    xxl: 1600px
+);
+
+
+//
+// Colours
+//
+
+$color-primary:   #451BA3;
+$color-secondary: #6EBCB0;
+$color-grey:      #9A99A4;
+$color-white:     #ffffff;
+$color-black:     #393939;
+
+
+//
+// Typography
+//
+
+$font-family-body: 'PT Sans', sans-serif;;
+$font-family-heading: 'Fjalla One', sans-serif;;
+$font-size-xs: .75rem;   // [12px]
+$font-size-sm: .875rem;  // [14px]
+$font-size-md: 1rem;     // [16px]
+$font-size-lg: 1.125rem; // [18px]
+$font-weight-bold: 600;
+$letter-spacing: 0.075rem;
+
+
+//
+// Spacing
+//
+
+$section-spacing-sm: 3.5rem;
+$section-spacing-md: 6rem;
+$section-spacing-lg: 10rem;

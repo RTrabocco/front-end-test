@@ -1,0 +1,188 @@
+/* ============================================================================
+   #HERO
+   ========================================================================= */
+
+/**
+ * Styles for hero section.
+ */
+
+
+/**
+ * Hero
+ */
+
+.hero {
+  padding-bottom: $section-spacing-sm;
+  padding-top: 1rem;
+
+  @include mq(lg) {
+    padding-bottom: 0;
+    padding-top: $section-spacing-md;
+  }
+}
+
+
+/**
+ * Hero ellipse
+ */
+
+.hero__ellipse {
+  border-radius: 50%;
+  position: absolute;
+  will-change: transform;
+  z-index: -1;
+}
+
+
+/**
+ * Hero ellipse 1
+ *
+ * Modifier for ellipse 1.
+ */
+
+.hero__ellipse--1 {
+  height: 250px;
+  left: -175px;
+  top: -175px;
+  width: 250px;
+}
+
+
+/**
+ * Hero ellipse 2
+ *
+ * Modifier for ellipse 2.
+ */
+
+.hero__ellipse--2 {
+  display: none;
+
+  @include mq(lg) {
+    bottom: 5%;
+    display: block;
+    height: 80px;
+    left: 30%;
+    width: 80px;
+  }
+}
+
+
+/**
+ * Hero ellipse 3
+ *
+ * Modifier for ellipse 3.
+ */
+
+.hero__ellipse--3 {
+  display: none;
+  
+  @include mq(lg) {
+    bottom: 35%;
+    display: block;
+    height: 32px;
+    right: 20%;
+    width: 32px;
+  }
+}
+
+
+/**
+ * Hero ellipse 4
+ *
+ * Modifier for ellipse 4.
+ */
+
+.hero__ellipse--4 {
+  display: none;
+  
+  @include mq(lg) {
+    display: block;
+    height: 150px;
+    left: 0;
+    top: 35%;
+    transform: translateX(-75%);
+    transform-origin: center left;
+    width: 150px;
+  }
+}
+
+
+/**
+ * Hero content
+ *
+ * 1. Remove 'margin-bottom' from the last child of the footer content.
+ */
+
+.hero__content {
+  position: relative;
+
+  & > :last-child {
+    margin-bottom: 0; // [1]
+  }
+
+  h1 {
+    color: $color-primary;
+
+    .highlight {
+      color: $color-secondary;
+    }
+  }
+
+  @include mq(lg) {
+    padding-bottom: $section-spacing-md;
+    padding-top: $section-spacing-md;
+  }
+}
+
+
+/**
+ * Hero image
+ *
+ * 1. Horizontally center the circle.
+ * 2. Force 1:1 aspect ratio using padding-bottom trick.
+ * 3. Push circle partially off screen.
+ */
+
+.hero__image {
+  margin-bottom: $section-spacing-sm;
+  padding-bottom: $section-spacing-md;
+  position: relative;
+  text-align: center;
+
+  @include mq(lg) {
+    margin-bottom: 0;
+    padding-bottom: $section-spacing-md;
+  }
+
+  &::before {
+    background-color: $color-primary;
+    border-radius: 50%;
+    bottom: 0;
+    content: '';
+    left: 50%; // [1]
+    padding-bottom: 140%; // [2]
+    position: absolute;
+    transform: translateX(-50%); // [1]
+    width: 140%;
+    z-index: -1;
+
+    @include mq(md) {
+      padding-bottom: 110%;
+      width: 110%;
+    }
+
+    @include mq(lg) {
+      left: 100%; // [3]
+      padding-bottom: 200%;
+      width: 200%;
+    }
+  }
+
+  img {
+    margin-bottom: 2rem;
+
+    @include mq(lg) {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+/* ============================================================================
+   #FOOTER
+   ========================================================================= */
+
+/**
+ * Styles for footer section.
+ */
+
+
+/**
+ * Footer
+ */
+
+.footer {
+  background: linear-gradient(90deg, #500f9a 0%, #500f99 50%, #28084d 100%);
+  color: $color-white;
+  padding-bottom: $section-spacing-sm;
+  padding-top: $section-spacing-sm;
+
+  @include mq(lg) {
+    margin-top: $section-spacing-lg;
+    padding-bottom: $section-spacing-md;
+    padding-top: $section-spacing-md;
+  }
+}
+
+
+/**
+ * Footer content
+ *
+ * 1. Remove 'margin-bottom' from the last child of the footer content.
+ */
+
+.footer__content {
+  margin-bottom: $section-spacing-sm;
+
+  & > :last-child {
+    margin-bottom: 0; // [1]
+  }
+
+  h2 {
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $color-white;
+    text-transform: uppercase;
+  }
+
+  @include mq(lg) {
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Footer newsletter
+ *
+ * 1. Negative 'margin-top' equal to footer 'padding-bottom' + footer
+ *    'margin-top' values.
+ */
+
+.footer__newsletter {
+  background: linear-gradient(135deg, #6ebcb0 0%, #227467 100%);
+  border-radius: 16px;
+  padding: 2rem;
+
+  @include mq(lg) {
+    margin-top: -($section-spacing-lg + $section-spacing-md); // [1]
+    padding: 3.5rem;
+  }
+
+  h3 {
+    letter-spacing: $letter-spacing;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(md) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .form-control {
+    border: 0;
+    border-radius: 8px;
+    font-size: $font-size-sm;
+    line-height: 1rem;
+    padding: 1rem;
+  
+    @include mq(md) {
+      font-size: $font-size-lg;
+      line-height: 1.5rem;
+      padding: 2rem;
+    }
+  }
+}

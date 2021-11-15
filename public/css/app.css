@@ -1,0 +1,512 @@
+/* ============================================================================
+   #GLOBAL
+   ========================================================================= */
+/**
+ * Styles for base, unclassed elements.
+ */
+/**
+ * HTML
+ */
+html {
+  overflow-x: hidden;
+}
+
+/**
+ * Body
+ */
+body {
+  color: #393939;
+  font-family: "PT Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/**
+ * Typography
+ *
+ * 1. Silent class to 'DRY' up code.
+ */
+h3,
+.h3, h1,
+.h1 {
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  h3,
+.h3, h1,
+.h1 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+@media screen and (min-width: 768px) {
+  h1,
+.h1 {
+    font-size: 4.5rem;
+    line-height: 5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1,
+.h1 {
+    font-size: 6rem;
+    line-height: 6.5rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  h3,
+.h3 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+}
+
+p {
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+}
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+}
+
+/**
+ * Forms
+ */
+label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.075rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  label {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* ============================================================================
+   #BUTTON
+   ========================================================================= */
+/**
+ * Styles for button component.
+ */
+/**
+ * Button
+ *
+ * 1. Animate the scale of the circle background.
+ */
+.btn {
+  border: 0;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.075rem;
+  line-height: 1rem;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 300ms ease-in-out;
+  z-index: 1;
+}
+.btn:hover::before {
+  transform: scale(1) translate(-50%, -50%);
+}
+.btn::before {
+  border-radius: 50%;
+  content: "";
+  height: 500px;
+  transform: scale(0) translate(-50%, -50%);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 500px;
+  transition: transform 300ms ease-in-out;
+  z-index: -1;
+}
+.btn::after {
+  border-radius: 10px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    font-size: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    line-height: 1.5rem;
+  }
+}
+
+/**
+ * Secondary button
+ *
+ * Modifer to create a secondary button.
+ */
+.btn--secondary {
+  color: #ffffff;
+}
+.btn--secondary::before {
+  background-color: #ffffff;
+}
+.btn--secondary::after {
+  background-color: #6EBCB0;
+}
+.btn--secondary:hover {
+  color: #6EBCB0;
+}
+
+/**
+ * White button
+ *
+ * Modifer to create a white button.
+ */
+.btn--white {
+  color: #6EBCB0;
+}
+.btn--white::before {
+  background-color: #451BA3;
+}
+.btn--white::after {
+  background-color: #ffffff;
+}
+.btn--white:hover {
+  color: #ffffff;
+}
+
+/* ============================================================================
+   #CONTAINER
+   ========================================================================= */
+/**
+ * Styles for container component.
+ */
+/**
+ * Wide container
+ *
+ * Modifier to increase the maximum width of a container.
+ */
+@media screen and (min-width: 1200px) {
+  .container--wide {
+    max-width: 1200px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .container--wide {
+    max-width: 1600px;
+  }
+}
+
+/* ============================================================================
+   #FOOTER
+   ========================================================================= */
+/**
+ * Styles for footer section.
+ */
+/**
+ * Footer
+ */
+.footer {
+  background: linear-gradient(90deg, #500f9a 0%, #500f99 50%, #28084d 100%);
+  color: #ffffff;
+  padding-bottom: 3.5rem;
+  padding-top: 3.5rem;
+}
+@media screen and (min-width: 992px) {
+  .footer {
+    margin-top: 10rem;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+  }
+}
+
+/**
+ * Footer content
+ *
+ * 1. Remove 'margin-bottom' from the last child of the footer content.
+ */
+.footer__content {
+  margin-bottom: 3.5rem;
+}
+.footer__content > :last-child {
+  margin-bottom: 0;
+}
+.footer__content h2 {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffffff;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 992px) {
+  .footer__content {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Footer newsletter
+ *
+ * 1. Negative 'margin-top' equal to footer 'padding-bottom' + footer
+ *    'margin-top' values.
+ */
+.footer__newsletter {
+  background: linear-gradient(135deg, #6ebcb0 0%, #227467 100%);
+  border-radius: 16px;
+  padding: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .footer__newsletter {
+    margin-top: -16rem;
+    padding: 3.5rem;
+  }
+}
+.footer__newsletter h3 {
+  letter-spacing: 0.075rem;
+}
+.footer__newsletter .form-group {
+  margin-bottom: 1rem;
+}
+.footer__newsletter .form-group:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .footer__newsletter .form-group {
+    margin-bottom: 2rem;
+  }
+}
+.footer__newsletter .form-control {
+  border: 0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__newsletter .form-control {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+/* ============================================================================
+   #HEADER
+   ========================================================================= */
+/**
+ * Styles for header section.
+ */
+/**
+ * Header
+ */
+.header {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+/**
+ * Header logo
+ */
+.header__logo {
+  display: block;
+  height: 1.5rem;
+}
+.header__logo img {
+  height: 100%;
+}
+
+/* ============================================================================
+   #HERO
+   ========================================================================= */
+/**
+ * Styles for hero section.
+ */
+/**
+ * Hero
+ */
+.hero {
+  padding-bottom: 3.5rem;
+  padding-top: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .hero {
+    padding-bottom: 0;
+    padding-top: 6rem;
+  }
+}
+
+/**
+ * Hero ellipse
+ */
+.hero__ellipse {
+  border-radius: 50%;
+  position: absolute;
+  will-change: transform;
+  z-index: -1;
+}
+
+/**
+ * Hero ellipse 1
+ *
+ * Modifier for ellipse 1.
+ */
+.hero__ellipse--1 {
+  height: 250px;
+  left: -175px;
+  top: -175px;
+  width: 250px;
+}
+
+/**
+ * Hero ellipse 2
+ *
+ * Modifier for ellipse 2.
+ */
+.hero__ellipse--2 {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .hero__ellipse--2 {
+    bottom: 5%;
+    display: block;
+    height: 80px;
+    left: 30%;
+    width: 80px;
+  }
+}
+
+/**
+ * Hero ellipse 3
+ *
+ * Modifier for ellipse 3.
+ */
+.hero__ellipse--3 {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .hero__ellipse--3 {
+    bottom: 35%;
+    display: block;
+    height: 32px;
+    right: 20%;
+    width: 32px;
+  }
+}
+
+/**
+ * Hero ellipse 4
+ *
+ * Modifier for ellipse 4.
+ */
+.hero__ellipse--4 {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .hero__ellipse--4 {
+    display: block;
+    height: 150px;
+    left: 0;
+    top: 35%;
+    transform: translateX(-75%);
+    transform-origin: center left;
+    width: 150px;
+  }
+}
+
+/**
+ * Hero content
+ *
+ * 1. Remove 'margin-bottom' from the last child of the footer content.
+ */
+.hero__content {
+  position: relative;
+}
+.hero__content > :last-child {
+  margin-bottom: 0;
+}
+.hero__content h1 {
+  color: #451BA3;
+}
+.hero__content h1 .highlight {
+  color: #6EBCB0;
+}
+@media screen and (min-width: 992px) {
+  .hero__content {
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+  }
+}
+
+/**
+ * Hero image
+ *
+ * 1. Horizontally center the circle.
+ * 2. Force 1:1 aspect ratio using padding-bottom trick.
+ * 3. Push circle partially off screen.
+ */
+.hero__image {
+  margin-bottom: 3.5rem;
+  padding-bottom: 6rem;
+  position: relative;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .hero__image {
+    margin-bottom: 0;
+    padding-bottom: 6rem;
+  }
+}
+.hero__image::before {
+  background-color: #451BA3;
+  border-radius: 50%;
+  bottom: 0;
+  content: "";
+  left: 50%;
+  padding-bottom: 140%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 140%;
+  z-index: -1;
+}
+@media screen and (min-width: 768px) {
+  .hero__image::before {
+    padding-bottom: 110%;
+    width: 110%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .hero__image::before {
+    left: 100%;
+    padding-bottom: 200%;
+    width: 200%;
+  }
+}
+.hero__image img {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .hero__image img {
+    margin-bottom: 0;
+  }
+}

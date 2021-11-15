@@ -1,0 +1,21 @@
+///* ==========================================================================
+//   #TOOLS
+//   ======================================================================= */
+
+
+//
+// Media query
+//
+// Mixin to quickly create media queries with widths from the $grid-breakpoints
+// map.
+//
+
+@mixin mq($breakpoint) {
+  @if not (map-has-key($grid-breakpoints, $breakpoint)) {
+    @error 'Breakpoint not found';
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, #{$breakpoint})) {
+    @content;
+  }
+}
